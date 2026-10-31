@@ -31,3 +31,35 @@ $$(".filter").forEach(btn=>btn.addEventListener("click",()=>{
 }));
 
 $("#demoAsk").addEventListener("click",()=>toast("Demo UI saja — AI asli akan dihubungkan pada tahap backend."));
+
+
+// New Games 2026 status filters
+$$('[data-release-filter]').forEach(button=>button.addEventListener('click',()=>{
+  $$('[data-release-filter]').forEach(item=>item.classList.remove('active'));
+  button.classList.add('active');
+  const status=button.dataset.releaseFilter;
+  $$('.release-card').forEach(card=>card.classList.toggle('hidden',status!=='all'&&card.dataset.releaseStatus!==status));
+}));
+
+
+// Void AI chatbot interface preview (no AI service connected yet)
+const chatForm = document.querySelector('#voidChatForm');
+const chatInput = document.querySelector('#voidChatInput');
+const chatMessages = document.querySelector('#chatMessages');
+function addChatBubble(role, title, message, note='') {
+  const bubble = document.createElement('div');
+  bubble.className = `chat-bubble ${role}`;
+  const heading = document.createElement('b'); heading.textContent = title;
+  const body = document.createElement('p'); body.textContent = message;
+  bubble.append(heading, body);
+  if (note) { const small = document.createElement('small'); small.textContent = note; bubble.append(small); }
+  chatMessages.append(bubble); chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+if (chatForm && chatInput && chatMessages) {
+  chatForm.addEventListener('submit', (event) => {
+    event.preventDefault(); const question = chatInput.value.trim(); if (!question) return;
+    addChatBubble('user', 'Lo', question); chatInput.value = '';
+    addChatBubble('assistant', 'Void AI', 'Makasih pertanyaannya! Chatbot ini masih dalam tahap pemasangan. Koneksi ke layanan AI belum aktif, jadi pesanmu belum diproses.');
+  });
+  document.querySelectorAll('.chat-suggestion').forEach(button => button.addEventListener('click', () => { chatInput.value = button.textContent; chatInput.focus(); }));
+}
