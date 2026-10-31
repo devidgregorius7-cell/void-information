@@ -1,39 +1,28 @@
-# Void Informations V1.0 — Prototype
+# Void Informations — Sidebar Navigation Prototype
 
-Ini adalah prototype frontend statis untuk proyek Void Informations.
+**Tagline:** All Games. One Void.
 
-## Cara mencoba
-1. Ekstrak file ZIP.
-2. Buka `index.html` di browser.
-3. Coba pencarian, filter platform/kategori, tombol bahasa, dan tema.
+## Isi versi ini
+- Sidebar gelap dengan aksen oranye dan logo Void Informations.
+- Navigasi halaman terpisah: Home, Game Database, New Games, Gaming News, Void AI, VIP Membership, Global Chat, Leaderboard, dan Contact.
+- Sidebar dapat diciutkan pada desktop dan menjadi drawer pada perangkat mobile.
+- Halaman VIP menampilkan akses Gratis serta 7 paket VIP. Paket maksimal: Rp87.000 untuk 2 tahun.
+- Menu Login dan Register hanya berupa placeholder sampai backend autentikasi siap.
+- Global Chat dan Leaderboard ditandai segera hadir; belum memakai database.
+- Void AI masih preview; belum terhubung ke layanan AI.
+- Pembayaran DANA masih melalui konfirmasi admin. Nomor akun pembayaran tidak ditampilkan di situs.
 
-## Yang sudah berfungsi
-- Tampilan responsive untuk HP dan desktop.
-- Pencarian lokal pada contoh game.
-- Filter kategori contoh.
-- Toggle Dark Mode / Light Mode (preferensi disimpan di browser).
-- Toggle bahasa Indonesia / Inggris untuk teks utama.
-- Tampilan Void AI Chatbot dengan kolom pesan dan saran pertanyaan (masih preview, belum terhubung ke model AI).
-- Navigasi menu mobile.
+## File
+- `index.html` — struktur halaman dan navigasi.
+- `style.css` — tema gelap/oranye, layout sidebar, dan responsif mobile.
+- `app.js` — navigasi halaman, filter game, tema, dan interaksi preview.
 
-## Yang masih berupa demo
-- Void AI belum terhubung ke model AI.
-- Artikel masih konten contoh, belum dibuat otomatis.
-- Database game masih data contoh lokal.
-- Login, registrasi, database, dan panel admin belum dibuat.
-- Account Market belum menerima transaksi atau data akun.
+## Cara memperbarui GitHub Pages
+1. Ekstrak ZIP ini.
+2. Buka repository `void-information` di GitHub.
+3. Upload dan timpa `index.html`, `style.css`, serta `app.js` dari folder `void_informations_v1`.
+4. Commit ke branch `main`.
+5. Tunggu GitHub Pages selesai memperbarui situs.
 
-## Void AI Chatbot
-Chat UI sudah ditambahkan sebagai prototype. Saat ini pengiriman pesan hanya menampilkan pemberitahuan bahwa backend AI belum aktif; tidak ada jawaban AI palsu. Untuk mengaktifkan AI sungguhan, siapkan backend/serverless function dan simpan API key hanya sebagai secret di sisi server. Jangan pernah menaruh API key di `app.js` atau file frontend.
-
-## Tahap berikutnya
-Untuk website online dengan AI dan admin sungguhan, proyek perlu backend, database, autentikasi admin, API AI yang disimpan aman di server, serta sumber data game yang dapat diverifikasi. Jangan menaruh API key rahasia di file JavaScript frontend.
-
-Email kontak admin pada prototype: `xNyxenvo.id@gmail.com`. WhatsApp, Discord, dan tautan grup masih menunggu detail kontak resmi.
-
-
-## New Games 2026
-Homepage includes an initial cross-platform release tracker with selected PC, console, Android and iOS releases. Dates and availability can change; every entry links to a source. This is a curated starter batch, not a complete worldwide game database.
-
-### Updating release information
-Check publisher/developer announcements before changing a date or marking a game as released. Keep regional launch restrictions visible and do not present unconfirmed dates as facts.
+## Catatan keamanan dan fitur
+GitHub Pages hanya meng-host file statis. Jangan memasukkan API key, password, PIN, OTP, atau kredensial pembayaran ke file frontend/repository publik. Login, registrasi, AI, pembayaran otomatis, aktivasi/masa berlaku VIP, chat realtime, leaderboard, dan Admin Panel membutuhkan backend/database yang aman. Sampai backend tersedia, tombol terkait hanya memberi keterangan dan tidak berpura-pura menjalankan transaksi.
